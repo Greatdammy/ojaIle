@@ -1,0 +1,47 @@
+﻿
+@{
+    <form asp-controller="Register" asp-method="Index" asp-action = "post"  >
+        <div class= "form-group" >
+        <label>FirstName</label>
+        <input type= "text" required name= "Firstname" class="form-control"/>
+        <span asp-validation-for="FirstName"></span>
+        </div>
+         <div class= "form-group">
+         <label>LastName</label>
+        <input type= "text" required name= "Lastname" class= "form-control"/>
+         <span asp-validation-for="LastName"></span>
+        </div>
+         <div class= "form-group">
+        <label>Username</label>
+        <input type= "text" required name= "Username" class="form-control"/>
+        <span asp-validation-for="UserName"></span>
+        </div>
+         <div class= "form-group">
+        <label>PhoneNumber</label>
+        <input type= "text" required name= "PhoneNumber" class="form-control"/>
+        <span asp-validation-for="phoneNumber"></span>
+        </div>
+         <div class= "form-group">
+         <label>Email</label>
+        <input type= "email" required name= "Email" class= "form-control"/>
+         <span asp-validation-for="Email"></span>
+        </div>
+         <div class= "form-group">
+        <label>Password</label>
+        <input type= "password" required name= "Password" class="form-control"/>
+        <span asp-validation-for="Password"></span>
+        </div>
+          <div class= "form-group">
+         <label>Confirm password</label>
+        <input type= "password" required asp-for= "ConfirmPassword" class= "form-control"/>
+         <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+
+        <hr/>
+         <div class= "form-group">
+        <input type= "submit" value= "Submit Data"/>
+        </div>
+
+    </form>
+}
+}

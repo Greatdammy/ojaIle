@@ -1,0 +1,37 @@
+﻿@page
+@using OjaIle.data.Models
+@using ojaIle.abstraction
+@inject IPropertyUnitService property
+@{
+    
+}
+
+    <div class="text-center">
+    <h1 class="display-4">Property Units</h1>
+    @{
+        var items = property.GetPropertyUnit();
+        PropertyUnit unit = new PropertyUnit();
+        <form asp-action="">
+          <type= "text" value = "@unit.UnitName"/>
+        </form>
+      
+      
+        <table>
+        <thead>
+        <th>Name</th>
+        <th>Unit Description</th>
+        </thead>
+        <tbody>
+            @foreach(var itm in items)
+            {
+                <tr>
+                <td>@itm.UnitName</td>
+                <td>@itm.UnitDescription</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+        
+    }
+  <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
