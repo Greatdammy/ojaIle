@@ -18,16 +18,17 @@ options.UseSqlServer(connectionString));
 
 
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
-    options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireDigit = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequireUppercase = false;
-}
-)
-    .AddEntityFrameworkStores<ojaileDbContext>();
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+//{
+//    options.SignIn.RequireConfirmedAccount = false;
+//    options.Password.RequireNonAlphanumeric = false;
+//    options.Password.RequiredLength = 6;
+//    options.Password.RequireDigit = false;
+//    options.Password.RequireLowercase = false;
+//    options.Password.RequireUppercase = false;
+//}
+//)
+//    .AddEntityFrameworkStores<ojaileDbContext>();
 
 var app = builder.Build();
 

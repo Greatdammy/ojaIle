@@ -5,7 +5,7 @@ namespace ojaIle.abstraction
 {
     public interface IPropertyUnitService
     {
-        void SavePropertyUnit();
+        void SavePropertyUnit(PropertyUnit value);
         void DeletePropertyUnit();
         void UpdatePropertyUnit(string name, PropertyUnit value);
         PropertyUnit GetPropertyUnitByName(string name);

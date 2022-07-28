@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ojaIle.core\ojaIle.core.csproj" />
     <ProjectReference Include="..\OjaIle\OjaIle.data.csproj" />
   </ItemGroup>
 

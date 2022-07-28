@@ -7,15 +7,23 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ojaIle.abstraction;
+using ojaIle.core;
 using ojaIle.facade;
 using ojaIle.webapi.Controllers.Data;
 using ojaIle.webapi.Model;
 using OjaIle.data.Models;
+using Serilog;
 using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -42,7 +50,7 @@ builder.Services.AddDbContext<OjaileContext>(options =>
 
 
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
 .AddEntityFrameworkStores<ojaileDbContext>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -55,12 +63,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]))
     });
+
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => builder.Configuration
 //.Bind(nameof(CookieAuthenticationDefaults.AuthenticationScheme), options));
 
 builder.Services.AddScoped<IPropertyUnitService, PropertyUnitService>();
 
 builder.Services.AddScoped<IPropertyItemServices, PropertyItemService>();
+builder.Services.AddScoped<IPropertyImageService, PropertyImageService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 ////Google Authentication
 

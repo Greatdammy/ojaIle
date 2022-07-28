@@ -10,8 +10,11 @@ namespace ojaIle.facade
 {
     public class PropertyUnitService : IPropertyUnitService
     {
-        private List<PropertyUnit> _propertyUnitList;
-
+        private readonly OjaileContext _db;
+        public PropertyUnitService(OjaileContext db)
+        {
+            _db = db;
+        }
         public void DeletePropertyUnit()
         {
             throw new NotImplementedException();
@@ -37,9 +40,13 @@ namespace ojaIle.facade
             throw new NotImplementedException();
         }
 
-        public void SavePropertyUnit()
+        public void SavePropertyUnit(PropertyUnit value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                _db.PropertyUnits.Add(value);
+                _db.SaveChanges();
+            }
         }
 
         public void UpdatePropertyUnit(string name, PropertyUnit value)

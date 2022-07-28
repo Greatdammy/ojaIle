@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web4", "Web4", "{B19B3E8C-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ojaile.client2", "ojaile.client2\ojaile.client2.csproj", "{C6A309F9-2808-4BAF-9650-ECC8EADDA3AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web5", "Web5", "{C1C81D37-8E88-4ADB-8786-1FB5230582A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ojaile.Consume", "Ojaile.Consume\Ojaile.Consume.csproj", "{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{C6A309F9-2808-4BAF-9650-ECC8EADDA3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6A309F9-2808-4BAF-9650-ECC8EADDA3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6A309F9-2808-4BAF-9650-ECC8EADDA3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +97,7 @@ Global
 		{84E20521-A08B-45F2-9446-9960B093B0A9} = {A133BB16-9D94-49D2-8FCE-74EA9183C898}
 		{493FD2DC-E399-4EDF-B96B-DDB95CFFA481} = {FCFA95BF-4412-4A1F-BE1B-9722A79AF369}
 		{C6A309F9-2808-4BAF-9650-ECC8EADDA3AF} = {B19B3E8C-A282-4FF7-A309-ED9EB960381B}
+		{01FC9ECA-8BC0-47A9-8CF9-197242ADEE4E} = {C1C81D37-8E88-4ADB-8786-1FB5230582A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {342A62B9-ACEA-4499-818E-2702AEE1D6F1}
